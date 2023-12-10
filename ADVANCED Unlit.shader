@@ -2,9 +2,8 @@
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "BeatSaber/Alyng/ADVANCED Unlit"
 {
-	Properties 
-  { 
-      [HideInInspector] shader_is_using_thry_editor("", Float)=0
+	Properties
+	{
 		[HideInInspector]m_start_ShaderOptions("Shader Options", Float) = 0
 		[ThryWideEnum(Off, 0, Front, 1, Back, 2)]_ThryEnumPreview("Cull", Float) = 0
 		[HideInInspector]m_end_ShaderOptions("Shader Options", Float) = 0
@@ -117,7 +116,8 @@ Shader "BeatSaber/Alyng/ADVANCED Unlit"
 			#endif
 			float4 Final576 = ( staticSwitch575 * staticSwitch596 );
 			o.Emission = Final576.rgb;
-			o.Alpha = ( _Glow1 * MainTexture518 * GlowGradient592 ).r;
+			float Fresnel614 = fresnelNode496;
+			o.Alpha = ( _Glow1 * MainTexture518 * GlowGradient592 * Fresnel614 ).r;
 		}
 
 		ENDCG
@@ -170,7 +170,7 @@ Node;AmplifyShaderEditor.RangedFloatNode;500;-2585.294,-1440.981;Inherit;False;P
 Node;AmplifyShaderEditor.RangedFloatNode;601;-2755.295,-1354.957;Inherit;False;Property;m_end_ShaderOptions;Shader Options;4;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;602;-2759.295,-1436.957;Inherit;False;Property;m_start_ShaderOptions;Shader Options;2;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.StandardSurfaceOutputNode;603;641.5584,-101.4807;Float;False;True;-1;2;Thry.ShaderEditor;0;0;Unlit;BeatSaber/Alyng/ADVANCED Unlit;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;;0;False;;False;0;False;;0;False;;False;0;Custom;0.5;True;False;2000;True;Custom;Opaque;Geometry;All;12;all;True;True;True;True;0;False;;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;2;15;10;25;False;0.5;False;0;0;False;;0;False;;0;0;False;;0;False;;0;False;;0;False;;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;True;Relative;0;;0;-1;-1;-1;0;False;0;0;True;_ThryEnumPreview;-1;0;False;;0;0;0;False;0.1;False;;0;False;;False;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;577;397.381,173.4536;Inherit;True;3;3;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;577;397.381,173.4536;Inherit;True;4;4;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RangedFloatNode;600;-2566.295,-1258.957;Inherit;False;Property;_ThryEnumPreview;Cull;3;0;Create;False;0;0;0;True;1;ThryWideEnum(Off, 0, Front, 1, Back, 2);False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.StaticSwitch;542;-1329.566,-1457.182;Inherit;False;Property;_CustomColors;Custom Colors;7;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;COLOR;0,0,0,0;False;0;COLOR;0,0,0,0;False;2;COLOR;0,0,0,0;False;3;COLOR;0,0,0,0;False;4;COLOR;0,0,0,0;False;5;COLOR;0,0,0,0;False;6;COLOR;0,0,0,0;False;7;COLOR;0,0,0,0;False;8;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.ColorNode;517;-1879.438,-1523.305;Float;False;Property;_Color;Color;6;0;Create;True;0;0;0;False;0;False;1,0,0,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -182,6 +182,8 @@ Node;AmplifyShaderEditor.GetLocalVarNode;580;162.293,188.703;Inherit;False;518;M
 Node;AmplifyShaderEditor.GetLocalVarNode;610;162.8131,286.5997;Inherit;False;592;GlowGradient;1;0;OBJECT;;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RGBToHSVNode;613;-490.4941,-831.1907;Inherit;True;1;0;FLOAT3;0,0,0;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.GetLocalVarNode;588;-752.1287,-814.7733;Inherit;False;564;GradientOut;1;0;OBJECT;;False;1;COLOR;0
+Node;AmplifyShaderEditor.RegisterLocalVarNode;614;-194.16,381.9089;Inherit;False;Fresnel;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.GetLocalVarNode;615;188.84,375.9089;Inherit;False;614;Fresnel;1;0;OBJECT;;False;1;FLOAT;0
 WireConnection;555;0;556;0
 WireConnection;558;0;557;0
 WireConnection;559;0;555;1
@@ -219,9 +221,11 @@ WireConnection;603;9;577;0
 WireConnection;577;0;578;0
 WireConnection;577;1;580;0
 WireConnection;577;2;610;0
+WireConnection;577;3;615;0
 WireConnection;542;1;517;0
 WireConnection;542;0;517;0
 WireConnection;609;0;542;0
 WireConnection;613;0;588;0
+WireConnection;614;0;496;0
 ASEEND*/
-//CHKSM=2D083946D69C7183EC7F8AAD2394D4F0F0C55D95
+//CHKSM=62B68AB7E38BF5303A7D9F27360719BB5BDA3160
