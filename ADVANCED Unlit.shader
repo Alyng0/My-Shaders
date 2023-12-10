@@ -12,8 +12,8 @@ Shader "BeatSaber/Alyng/ADVANCED Unlit"
 		_Color("Color", Color) = (1,0,0,1)
 		[Toggle(_CUSTOMCOLORS_ON)] _CustomColors("Custom Colors", Float) = 0
 		[BigTexture]_BigTexturePreview("Texture", 2D) = "white" {}
-		[HideInInspector]m_end_MainSettings("Main Settings", Float) = 0
 		_Glow1("Glow", Range( 0 , 1)) = 0
+		[HideInInspector]m_end_MainSettings("Main Settings", Float) = 0
 		[HideInInspector]m_start_Gradients("Gradients", Float) = 0
 		[Toggle(_GRADIENT_ON)] _Gradient("Gradient", Float) = 0
 		[Toggle(_COLORGRADIENT1_ON)] _ColorGradient1("Color Gradient", Float) = 0
@@ -165,7 +165,7 @@ Node;AmplifyShaderEditor.RegisterLocalVarNode;576;-78.65173,50.4717;Inherit;Fals
 Node;AmplifyShaderEditor.GetLocalVarNode;598;-1303.897,48.32416;Inherit;False;564;GradientOut;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.SamplerNode;505;-1951.399,74.26096;Inherit;True;Property;_BigTexturePreview;Texture;8;0;Create;False;0;0;0;True;1;BigTexture;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;594;446.9782,-128.0325;Inherit;False;576;Final;1;0;OBJECT;;False;1;COLOR;0
-Node;AmplifyShaderEditor.RangedFloatNode;498;-2576,-1344;Inherit;False;Property;m_end_MainSettings;Main Settings;9;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;498;-2576,-1344;Inherit;False;Property;m_end_MainSettings;Main Settings;10;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;500;-2585.294,-1440.981;Inherit;False;Property;m_start_MainSettings;Main Settings;5;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;601;-2755.295,-1354.957;Inherit;False;Property;m_end_ShaderOptions;Shader Options;4;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;602;-2759.295,-1436.957;Inherit;False;Property;m_start_ShaderOptions;Shader Options;2;1;[HideInInspector];Fetch;False;0;0;0;True;0;False;0;0;0;0;0;1;FLOAT;0
@@ -174,7 +174,7 @@ Node;AmplifyShaderEditor.SimpleMultiplyOpNode;577;397.381,173.4536;Inherit;True;
 Node;AmplifyShaderEditor.RangedFloatNode;600;-2566.295,-1258.957;Inherit;False;Property;_ThryEnumPreview;Cull;3;0;Create;False;0;0;0;True;1;ThryWideEnum(Off, 0, Front, 1, Back, 2);False;0;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.StaticSwitch;542;-1329.566,-1457.182;Inherit;False;Property;_CustomColors;Custom Colors;7;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;COLOR;0,0,0,0;False;0;COLOR;0,0,0,0;False;2;COLOR;0,0,0,0;False;3;COLOR;0,0,0,0;False;4;COLOR;0,0,0,0;False;5;COLOR;0,0,0,0;False;6;COLOR;0,0,0,0;False;7;COLOR;0,0,0,0;False;8;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.ColorNode;517;-1879.438,-1523.305;Float;False;Property;_Color;Color;6;0;Create;True;0;0;0;False;0;False;1,0,0,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.RangedFloatNode;578;118.0069,117.3665;Inherit;False;Property;_Glow1;Glow;10;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;578;118.0069,117.3665;Inherit;False;Property;_Glow1;Glow;9;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RegisterLocalVarNode;609;-1053.217,-1452.099;Inherit;False;Color;-1;True;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.GetLocalVarNode;599;-1204.16,-49.88367;Inherit;False;609;Color;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.GetLocalVarNode;565;-1051.665,250.6383;Inherit;False;609;Color;1;0;OBJECT;;False;1;COLOR;0
@@ -224,4 +224,4 @@ WireConnection;542;0;517;0
 WireConnection;609;0;542;0
 WireConnection;613;0;588;0
 ASEEND*/
-//CHKSM=A7D5BF4ADA499E748EE112AEE4E5DA4B9588CBA0
+//CHKSM=2D083946D69C7183EC7F8AAD2394D4F0F0C55D95
