@@ -20,7 +20,7 @@ Shader "BeatSaber/Alyng/Alyngs FireTrail V2"
 		[BigTexture]_BigTexturePreview("Main Texture", 2D) = "white" {}
 		[BigTexture]_BigTexturePreview2("Displacement 1", 2D) = "black" {}
 		_Displacement1Speed("Displacement 1 Speed", Vector) = (0,0,0,0)
-		_Displacement1Strength("Displacement 1 Strength", Float) = 7.34
+		_Displacement1Strength("Displacement 1 Strength", Float) = 0.2
 		[BigTexture]_BigTexturePreview1("Displacement 2", 2D) = "black" {}
 		_Displacement2Speed("Displacement 2 Speed", Vector) = (0,0,0,0)
 		_Displacement2Strength("Displacement 2 Strength", Float) = 0.2
